@@ -7,7 +7,7 @@ function sumSalary(salaries) {
 
   return Object.values(salaries).reduce(
     (acc, item) => {
-      if (isSafeNumberValue(item)) {
+      if (Number.isFinite(item)) {
         return sum = acc + item;
       }
 
@@ -15,8 +15,4 @@ function sumSalary(salaries) {
     },
     sum
   );
-}
-
-function isSafeNumberValue(value) {
-  return typeof value === 'number' && !Number.isNaN(value) && Number.isFinite(value);
 }
